@@ -75,10 +75,42 @@
                                     <img src="img/cover 2.png" class="post-image" alt="">
                                     <div class="post-content">
                                         <div class="reaction-wrapper">
-                                            <a style="margin-right: 10px;"><i class="fa-regular fa-heart"></i><span
-                                                    class="likes fs-3 d-none d-sm-inline"
-                                                    style="margin-left: 5px;">1,012
-                                                    likes</span></a>
+                                            <a id="heartButton" style="margin-right: 10px; cursor: pointer;">
+                                                <i class="fas fa-heart" style="color: black;"></i>
+                                                <span class="likes fs-3 d-none d-sm-inline" style="margin-left: 5px;"
+                                                    data-likes="1012">
+                                                    1012 likes
+                                                </span>
+                                            </a>
+
+                                            <script>
+                                            $(document).ready(function() {
+                                                $("#heartButton").click(function() {
+                                                    // Dapatkan elemen ikon hati
+                                                    var heartIcon = $("#heartButton i.fa-heart");
+
+                                                    // Dapatkan elemen span yang menyimpan likes count
+                                                    var likesElement = $("#heartButton .likes");
+
+                                                    // Dapatkan jumlah likes saat ini dari atribut data-likes
+                                                    var currentLikes = parseInt(likesElement.attr(
+                                                        "data-likes"));
+
+                                                    // Tambahkan 1 ke jumlah likes saat ini
+                                                    var newLikes = currentLikes + 1;
+
+                                                    // Perbarui atribut data-likes dengan jumlah likes yang baru
+                                                    likesElement.attr("data-likes", newLikes);
+
+                                                    // Tampilkan jumlah likes yang baru pada halaman
+                                                    likesElement.text(newLikes + " likes");
+
+                                                    // Ubah warna ikon hati menjadi merah
+                                                    heartIcon.css("color", "red");
+                                                });
+                                            });
+                                            </script>
+
                                             <a style="margin-right: 10px;"><i class="fa-regular fa-comment"></i></a>
                                             <a style="margin-right: 10px;"><i
                                                     class="fa-regular fa-share-from-square"></i></a>
@@ -116,10 +148,41 @@
                                         <img src="img/cover 2.png" class="post-image" alt="">
                                         <div class="post-content">
                                             <div class="reaction-wrapper">
-                                                <a style="margin-right: 10px;"><i class="fa-regular fa-heart"></i><span
-                                                        class="likes fs-3 d-none d-sm-inline"
-                                                        style="margin-left: 5px;">1,012
-                                                        likes</span></a>
+                                                <a id="heartButton" style="margin-right: 10px; cursor: pointer;">
+                                                    <i class="fas fa-heart" style="color: black;"></i>
+                                                    <span class="likes fs-3 d-none d-sm-inline"
+                                                        style="margin-left: 5px;" data-likes="1012">
+                                                        1012 likes
+                                                    </span>
+                                                </a>
+
+                                                <script>
+                                                $(document).ready(function() {
+                                                    $("#heartButton").click(function() {
+                                                        // Dapatkan elemen ikon hati
+                                                        var heartIcon = $("#heartButton i.fa-heart");
+
+                                                        // Dapatkan elemen span yang menyimpan likes count
+                                                        var likesElement = $("#heartButton .likes");
+
+                                                        // Dapatkan jumlah likes saat ini dari atribut data-likes
+                                                        var currentLikes = parseInt(likesElement.attr(
+                                                            "data-likes"));
+
+                                                        // Tambahkan 1 ke jumlah likes saat ini
+                                                        var newLikes = currentLikes + 1;
+
+                                                        // Perbarui atribut data-likes dengan jumlah likes yang baru
+                                                        likesElement.attr("data-likes", newLikes);
+
+                                                        // Tampilkan jumlah likes yang baru pada halaman
+                                                        likesElement.text(newLikes + " likes");
+
+                                                        // Ubah warna ikon hati menjadi merah
+                                                        heartIcon.css("color", "red");
+                                                    });
+                                                });
+                                                </script>
                                                 <a style="margin-right: 10px;"><i class="fa-regular fa-comment"></i></a>
                                                 <a style="margin-right: 10px;"><i
                                                         class="fa-regular fa-share-from-square"></i></a>
